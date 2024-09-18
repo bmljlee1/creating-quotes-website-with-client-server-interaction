@@ -1,5 +1,9 @@
 body {
   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 h1 {
   font-size: 40px;
@@ -15,7 +19,6 @@ h1 {
 .right-image {
   width: 700px;
   height: auto;
-  float: right;
   margin-right: 100px;
 }
 

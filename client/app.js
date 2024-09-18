@@ -1,7 +1,9 @@
 const quotesContainer = document.getElementById("quotes");
 
 async function getQuotes() {
-  const response = await fetch("http://localhost:8080/quotes");
+  const response = await fetch(
+    "https://week04-project-a1mg.onrender.com/quotes"
+  );
   const data = await response.json();
   console.log(data);
 
@@ -35,16 +37,19 @@ async function getQuotes() {
 }
 
 async function likeQuote(id) {
-  const response = await fetch(`http://localhost:8080/quotes/${id}/like`, {
-    method: "POST",
-  });
+  const response = await fetch(
+    `https://week04-project-a1mg.onrender.com/quotes/${id}/like`,
+    {
+      method: "POST",
+    }
+  );
   await getQuotes();
 }
 
 getQuotes();
 
 async function deleteQuote(id) {
-  await fetch(`http://localhost:8080/quotes/${id}`, {
+  await fetch(`https://week04-project-a1mg.onrender.com/quotes/${id}`, {
     method: "DELETE",
   });
 }
@@ -63,7 +68,7 @@ async function handlePostQuotes(event) {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
   console.log(data);
-  await fetch("http://localhost:8080/quotes", {
+  await fetch("https://week04-project-a1mg.onrender.com/quotes", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
